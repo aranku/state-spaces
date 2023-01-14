@@ -1,4 +1,4 @@
-_name_: compression
+_name_: window
 d_model: 256
 chunk_len: 392
 model:
