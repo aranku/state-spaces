@@ -1,0 +1,23 @@
+_name_: compression
+d_model: 256
+chunk_len: 198
+num_special_tokens: 1
+model:
+  _name_: model
+  prenorm: true
+  transposed: false
+  n_layers: 4
+  d_model: 256
+  residual: R
+  pool:
+    _name_: pool
+    stride: 1
+    expand: null
+  norm: layer
+  dropout: 0.0
+  tie_dropout: false
+  track_norms: true
+
+encoder:
+  _name_: position
+  dropout: ${..dropout}
