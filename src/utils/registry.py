@@ -43,7 +43,7 @@ model = {
     "nonaka/inception": "src.models.baselines.nonaka.inception.inception1d",
     "nonaka/xresnet50": "src.models.baselines.nonaka.xresnet.xresnet1d50",
     # Compression model
-    "compression": "src.models.sequence.CompressionModel"
+    "compression": "src.models.sequence.compression_model.CompressionModel"
 }
 
 layer = {
