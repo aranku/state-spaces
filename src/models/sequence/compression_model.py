@@ -1,6 +1,7 @@
 from src.utils.config import instantiate
 import torch
 from torch import nn
+from src.models.sequence.base import SequenceModule
 from src.utils import registry
 
 class CompressionModel(SequenceModule):
