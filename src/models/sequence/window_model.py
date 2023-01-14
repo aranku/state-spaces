@@ -12,7 +12,7 @@ class WindowModel(SequenceModule):
         self.chunk_len = chunk_len
         self.transposed = transposed
 
-    def forward(self, x, state=None):
+    def forward(self, x, *args, state=None, **kwargs):
         batch_size = x.shape[0]
         seq_length = x.shape[1]
 

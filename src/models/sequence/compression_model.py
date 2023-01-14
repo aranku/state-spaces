@@ -15,7 +15,7 @@ class CompressionModel(SequenceModule):
         self.num_special_tokens = num_special_tokens
         self.special_token = nn.Parameter(torch.zeros(num_special_tokens,d_model))
 
-    def forward(self, x, state=None):
+    def forward(self, x, *args, state=None, **kwargs):
         batch_size = x.shape[0]
         seq_length = x.shape[1]
         special_token_batched = self.special_token.repeat(batch_size,1,1)
