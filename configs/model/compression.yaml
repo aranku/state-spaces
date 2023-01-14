@@ -20,4 +20,3 @@ model:
 
 encoder:
   _name_: position
-  dropout: ${..dropout}
