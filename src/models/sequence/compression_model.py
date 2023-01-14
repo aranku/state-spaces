@@ -19,7 +19,7 @@ class CompressionModel(SequenceModule):
         batch_size = x.shape[0]
         seq_length = x.shape[1]
         special_token_batched = self.special_token.repeat(batch_size,1,1)
-        
+
         chunked_x = [x[:,i:i + self.chunk_len,:] for i in range(0, seq_length, self.chunk_len)]
 
         prefix = []
