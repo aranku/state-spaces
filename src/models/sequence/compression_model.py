@@ -26,8 +26,8 @@ class CompressionModel(SequenceModule):
         outputs = []
         for i,chunk in enumerate(chunked_x):
             output, state = self.model(torch.cat(prefix + [chunk, special_token_batched], dim=1))
-            prefix.append(output[:,-self.num_special_tokens:,:])
             outputs.append(output[:,i*self.num_special_tokens:-self.num_special_tokens,:])
 
-        x = torch.cat(outputs,dim=1)
-        return x, [state]
+        result = torch.cat(outputs,dim=1)
+        torch._assert(x.shape == result.shape)
+        return result, [state]
