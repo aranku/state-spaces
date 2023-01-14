@@ -29,5 +29,5 @@ class CompressionModel(SequenceModule):
             outputs.append(output[:,i*self.num_special_tokens:-self.num_special_tokens,:])
 
         result = torch.cat(outputs,dim=1)
-        torch._assert(x.shape == result.shape)
+        torch._assert(x.shape == result.shape, "Input and output shapes do not match")
         return result, [state]
